@@ -1,11 +1,46 @@
 // app/special/page.tsx
 'use client';
 
+import { useState } from 'react';
 import Image from 'next/image';
 
 export default function SpecialPage() {
+  // estado para controlar o texto da mensagem
+  const [message, setMessage] = useState(
+    `Oi meu amor! Venho aqui por meio deste humilde blog digital te dar os meus mais sinceros parabéns....
+Nossa querido... Parabéns por que?...
+E eu te respondo...
+Porque hoje é o seu aniversario.
+O melhor dia do ano....
+
+Amor, parabéns!!! Feliz aniversário, é imensuravel o tanto de gratidão que tenho por você ser essa pessoa que me FORNECE doses GIGANTESCAS de amor todos os dias.
+
+Eu amo o jeito em que você sempre se declara pra mim, eu amo o jeito bonitinho que você fica quando está a ficar fofinha, eu amo como você sente
+saudades de mim mesmo antes de eu ir embora da sua casa. Eu amo o jeito que você se veste,
+Eu amo como você não consegue ficar brava com ninguém. Eu amo me sentir inspirado na forma que você lida com a vida.
+Acima de tudo, eu amo amar mais a vida!
+
+Nunca imaginei que fosse encontrar uma pessoa tão boa quanto você.
+Sempre me pego agradecendo por você existir.
+Te amo :)
+
+Estou morrendo de saudades de você, mas esse tempo longe vai passar rapidinho, e a gente nem vai ver.
+Que eu possa acompanhar mais UM MILHÃO DE aniversários (GRAÇAS A DEUS presencialmente, pra poder te dar presentinhos fisicos e carinhos mais fisicos ainda hihi)
+
+Enfim. Te amo muito mesmo meu amor, sou grato por você existir na minha vida tanto, que você não sabe o quanto.
+
+No seu aniversario de 18 anos vou ter que fazer um software inteiro.
+`
+  );
+
+  // função para mudar o texto quando o botão for clicado
+  const handleLoveClick = () => {
+    setMessage('eu te amoooooooooooooooooooooooo maisssssssssssss AO INFINITO HAHAHAHAHAHA');
+  };
+
+  // função para voltar para a página inicial
   const handleGoBack = () => {
-    window.location.href = '/'; 
+    window.location.href = '/';
   };
 
   return (
@@ -22,26 +57,33 @@ export default function SpecialPage() {
       </div>
 
       <div className="w-full max-w-sm border border-white p-8 text-center bg-pink-400 bg-opacity-70 backdrop-blur-sm">
-        
+
         <div className="mb-8">
           <h1 className="text-xl font-bold">
-            feliz aniversario, manuela!
+            DE HEITOR JASKO A MANUELA CRISPINO
           </h1>
         </div>
-        
-        {/* texto estático para a mensagem */}
+
+        {/* texto que será alterado pelo botão */}
         <div className="w-full p-4 mb-8 bg-pink-900 bg-opacity-50 border border-white text-white whitespace-pre-line text-left">
-          digite aqui sua mensagem especial, heitor.
-          aqui é o lugar para o seu texto fixo.
+          {message}
         </div>
 
+        {/* novo botão */}
         <button
-          onClick={handleGoBack}
-          className="w-full px-4 py-2 border border-white bg-gray-600 hover:bg-gray-700 active:bg-gray-800"
+          onClick={handleLoveClick}
+          className="w-full px-4 py-2 border border-white bg-red-600 hover:bg-red-700 active:bg-red-800 text-white font-bold"
         >
-          voltar para o início
+          eu te amo
         </button>
+
+
       </div>
+      <style jsx global>{`
+        body {
+          font-family: 'Comic Sans MS', 'Comic Sans', sans-serif;
+        }
+      `}</style>
     </main>
   );
 }

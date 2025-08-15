@@ -104,6 +104,11 @@ export default function Home() {
           )}
         </div>
       </div>
+      <style jsx global>{`
+        body {
+          font-family: 'Comic Sans MS', 'Comic Sans', sans-serif;
+        }
+      `}</style>
     </main>
   );
 }
