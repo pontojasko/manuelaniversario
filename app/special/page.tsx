@@ -33,14 +33,18 @@ No seu aniversario de 18 anos vou ter que fazer um software inteiro.
 `
   );
 
-  // função para mudar o texto quando o botão for clicado
+  // estado para controlar a visibilidade do botão secreto
+  const [showSecretButton, setShowSecretButton] = useState(false);
+
+  // função para mudar o texto e mostrar o botão secreto
   const handleLoveClick = () => {
     setMessage('eu te amoooooooooooooooooooooooo maisssssssssssss AO INFINITO HAHAHAHAHAHA');
+    setShowSecretButton(true);
   };
 
-  // função para voltar para a página inicial
-  const handleGoBack = () => {
-    window.location.href = '/';
+  // função para redirecionar para o link do segredo
+  const handleSecretClick = () => {
+    window.location.href = 'https://youtu.be/aBXGGkluSnc?si=iuWfi5nqFQp2ka1Z&t=37';
   };
 
   return (
@@ -69,7 +73,7 @@ No seu aniversario de 18 anos vou ter que fazer um software inteiro.
           {message}
         </div>
 
-        {/* novo botão */}
+        {/* botão 'eu te amo' */}
         <button
           onClick={handleLoveClick}
           className="w-full px-4 py-2 border border-white bg-red-600 hover:bg-red-700 active:bg-red-800 text-white font-bold"
@@ -77,7 +81,15 @@ No seu aniversario de 18 anos vou ter que fazer um software inteiro.
           eu te amo
         </button>
 
-
+        {/* botão secreto que aparece condicionalmente */}
+        {showSecretButton && (
+          <button
+            onClick={handleSecretClick}
+            className="w-full mt-4 px-4 py-2 border border-white bg-purple-600 hover:bg-purple-700 active:bg-purple-800 text-white font-bold"
+          >
+            segredo
+          </button>
+        )}
       </div>
       <style jsx global>{`
         body {
