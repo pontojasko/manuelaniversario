@@ -72,7 +72,7 @@ export default function Home() {
 
         <div className="mb-8">
           <h1 className="text-xl font-bold">
-            {isAugust15 ? 'FELICIDADES!' : 'aniversario manuela'}
+            {isAugust15 ? 'MANUELA MEU AMOR!' : 'aniversario manuela'}
           </h1>
           <p className="mt-2 text-sm">
             clique no botao abaixo e dependendo tera uma grande surpresa
